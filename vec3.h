@@ -52,13 +52,13 @@ public:
         return sqrt(length_squared());
     }
 
-    // 计算向量的长度
+    // 计算向量的长度 向量的模
     double length_squared() const {
         return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
     }
 };
 
-using point = vec3; // 3D point
+using point3 = vec3; // 3D point
 
 // 当输出当前类的对象时，会调用这个函数
 inline std::ostream& operator<<(std::ostream &out, const vec3 &v) {

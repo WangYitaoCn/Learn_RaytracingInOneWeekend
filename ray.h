@@ -12,21 +12,21 @@ class ray {
         // 构造函数
         ray() {}
         // 构造函数
-        ray(const point& origin, const vec3& direction)
+        ray(const point3& origin, const vec3& direction)
             : orig(origin), dir(direction)
         {}
 
         // 获取射线的原点
-        point origin() const  { return orig; }
+        point3 origin() const  { return orig; }
         // 获取射线的方向
         vec3 direction() const { return dir; }
 
         // 计算射线上的点
-        point at(double t) const {
+        point3 at(double t) const {
             return orig + t*dir;
         }
     private:
-        point orig;
+        point3 orig;
         vec3 dir;
 
 };
