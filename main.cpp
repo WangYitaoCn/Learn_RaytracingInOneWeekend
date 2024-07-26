@@ -26,7 +26,6 @@ color ray_color(const ray& r) {
 }
 
 int main() {
-
     auto aspect_ratio = 16.0 / 9.0;
 
     // Image
@@ -65,11 +64,13 @@ int main() {
     // 通过左上角像素的位置和像素的宽度和高度 计算出像素的中心位置
     auto pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);
 
+
+
     // Render
     std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
     //左上 -> 右下 遍历像素
     for (int j = 0; j < image_height; j++) {
-        std::clog << "\rScanlines remaining: " << image_height - j << ' ' << std::flush;
+        std::clog << "\rScanlines remaining: " << image_height - j << ' ' <<"\n" << std::flush;
         for (int i = 0; i < image_width; i++) {
             // pixel position
             auto pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);
@@ -79,8 +80,8 @@ int main() {
 
             color pixel_color = ray_color(r);
             write_color(std::cout, pixel_color);
+
         }
     }
-
     std::clog << "\nDone.\n";
 }
