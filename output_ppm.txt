@@ -1,0 +1,1 @@
+ build-debug/Learn_RaytracingInOneWeekend > image.ppm
